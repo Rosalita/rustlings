@@ -2,11 +2,11 @@
 // Destructure the `cat` tuple so that the println will work.
 // Execute `rustlings hint primitive_types5` for hints!
 
-// I AM NOT DONE
-
 fn main() {
+    // cat is a tuple, a comma separated list of values inside parentheses
     let cat = ("Furry McFurson", 3.5);
-    let /* your pattern here */ = cat;
+    // This is an example of using pattern matching to destructure a tuple.
+    let (name, age) = cat;
 
     println!("{} is {} years old.", name, age);
 }
