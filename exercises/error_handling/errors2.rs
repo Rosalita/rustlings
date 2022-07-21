@@ -16,15 +16,20 @@
 // There are at least two ways to implement this that are both correct-- but
 // one is a lot shorter! Execute `rustlings hint errors2` for hints to both ways.
 
-// I AM NOT DONE
-
 use std::num::ParseIntError;
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
-    let qty = item_quantity.parse::<i32>();
+    // the parse returns a result, so qty starts life as a result
+    // let qty = item_quantity.parse::<i32>();
 
+    // can't perform mathematical operations on a result though
+    // so a ? is added to the parse call
+    // if parse fails and returns an error, the ? does an early return for us.
+    let qty = item_quantity.parse::<i32>()?;
+
+    // So at this line, qty will be unwrapped, have a valid value and can be used in calculations.
     Ok(qty * cost_per_item + processing_fee)
 }
 
