@@ -1,7 +1,5 @@
 // iterators4.rs
 
-// I AM NOT DONE
-
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
     // Do not use:
@@ -12,6 +10,14 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+
+    // using =num means that num is included in the range
+    // if the range was (1..4), it would be 1,2,3 and not include 4.
+    // range (1..=4) would be 1,2,3,4
+    // fold solds every element into an accumulator by applying an operation and returning the final result.
+    // In other languages this is called reduce.
+    // Folding always produces a single value from a collection of values.
+    (1..=num).fold(1, |acc, v| acc * v)
 }
 
 #[cfg(test)]
